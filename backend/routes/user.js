@@ -1,13 +1,14 @@
+const express = require("express");
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
-const router = require("express").Router();
+const router = express.Router()
 
 
 // GET ALL USERS
 router.get("/", async (req, res) => {
     try {
-        const users = await User.find().sort({ createdAt: -1 });
+        const users = await User.find().select("-password").sort({ createdAt: -1 });
         res.status(200).json(users);
     } 
     catch (err) {
