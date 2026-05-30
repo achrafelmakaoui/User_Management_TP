@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const userRoute = require("./routes/user");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const app = express();
@@ -14,6 +15,7 @@ mongoose
 
 app.use(cors());
 app.use(express.json());
+app.use("/users", userRoute);
 
 app.get("/", (req, res) => {
   res.send("User Management API is running...");
