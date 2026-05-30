@@ -1,7 +1,16 @@
 const express = require("express");
 const cors = require("cors");
-
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
 const app = express();
+dotenv.config();
+
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log("DB Connection Working!"))
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.use(cors());
 app.use(express.json());
