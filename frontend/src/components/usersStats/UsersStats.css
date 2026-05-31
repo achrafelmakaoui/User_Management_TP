@@ -1,0 +1,32 @@
+.stateBanner{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.stateCard {
+    background-color: #bed7eeb3;
+    border: 1px solid #0565b972;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+.stateCard span{
+    font-family: "Outfit", sans-serif;
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    color: #0565b9; 
+    letter-spacing: .18em; 
+    text-transform: uppercase; 
+}
+
+.stateCard h3{
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #0e1f1c;
+    letter-spacing: -0.02em;
+    line-height:1.1;
+    margin-top: 1rem;
+}
