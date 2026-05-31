@@ -1,0 +1,51 @@
+.updateUserPage {
+    width: 100%;
+    background-color: white;
+    padding: 2.5rem 0;
+}
+.container {
+    max-width: 1150px; 
+    margin: 0 auto; 
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(15, 76, 69, 0.12);
+}
+.headerContent span{ 
+    font-family: "Outfit", sans-serif;
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    color: #0565b9; 
+    letter-spacing: .18em; 
+    text-transform: uppercase; 
+}
+.headerContent h2{
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #0e1f1c;
+    letter-spacing: -0.02em;
+    line-height:1.1;
+    margin-top: 1rem;
+}
+.headerBtn a{
+    font-family: "Outfit", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #0565b9;
+    background-color: transparent;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1px solid #0565b96e;
+    cursor: pointer;
+}
+.headerBtn a:hover {
+    background-color: #0565b9;
+    color: white;
+}

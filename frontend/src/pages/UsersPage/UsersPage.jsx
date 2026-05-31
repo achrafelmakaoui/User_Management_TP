@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
 import './UsersPage.css'
-import UsersStats from "../components/usersStats/UsersStats"
-import UsersTable from "../components/usersTable/UsersTable"
+import UsersStats from "../../components/usersStats/UsersStats"
+import UsersTable from "../../components/usersTable/UsersTable"
 import axios from 'axios'
 
 const UsersPage = () => {
@@ -48,7 +49,7 @@ const UsersPage = () => {
                         <h2>Manage your application users and roles</h2>
                     </div>
                     <div className="headerBtn">
-                        <button>Add user</button>
+                        <Link to="/newUser">Add User</Link>
                     </div>
                 </div>
                 <UsersStats users={users}/>

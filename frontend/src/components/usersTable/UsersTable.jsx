@@ -1,5 +1,6 @@
 import React from 'react'
 import "./UsersTable.css"
+import { Link } from 'react-router-dom';
 
 const UsersTable = ({ users, onDelete }) => {
     const formatDate = (dateStr) => {
@@ -34,7 +35,7 @@ const UsersTable = ({ users, onDelete }) => {
                             <td>
                             <div className="actionBtns">
                                 <button className="actionDelete" onClick={() => onDelete(user._id)}>🗑️</button>
-                                <button className="actionUpdate">✏️</button>
+                                <Link to="/updateUser" className="actionUpdate">✏️</Link>
                             </div>
                             </td>
                         </tr>
