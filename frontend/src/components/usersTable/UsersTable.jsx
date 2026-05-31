@@ -35,7 +35,7 @@ const UsersTable = ({ users, onDelete }) => {
                             <td>
                             <div className="actionBtns">
                                 <button className="actionDelete" onClick={() => onDelete(user._id)}>🗑️</button>
-                                <Link to="/updateUser" className="actionUpdate">✏️</Link>
+                                <Link to={`/updateUser/${user._id}`}className="actionUpdate">✏️</Link>
                             </div>
                             </td>
                         </tr>

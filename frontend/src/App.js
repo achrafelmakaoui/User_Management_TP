@@ -9,7 +9,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<><UsersPage/></>}/>
                 <Route path="/newUser" element={<><NewUserPage/></>}/>
-                <Route path="/updateUser" element={<><UpdateUserPage/></>}/>
+                <Route path="/updateUser/:id" element={<><UpdateUserPage/></>}/>
             </Routes>
         </div>
     );
