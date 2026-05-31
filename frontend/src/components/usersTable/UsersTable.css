@@ -1,0 +1,75 @@
+.tableBanner{
+    width: 100%;
+}
+.usersTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #0565b96e;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: "Outfit", sans-serif;
+}
+.usersTable thead {
+    background: #bed7ee4e;
+}
+.usersTable th {
+    text-align: left;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0e1f1c;
+}
+.usersTable td {
+    padding: 1.2rem 2rem;
+    border-top: 1px solid #0565b96e;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #0e1f1c;
+}
+.usersTable tbody tr:hover {
+    background: #bed7ee4e;
+}
+.role.user span{
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: #0565b947;
+    padding: 0.55rem 1.1rem;
+    border-radius: 50px;
+    color: #0565b9;
+}
+.role.admin span{
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: #05b93b47;
+    padding: 0.55rem 1.1rem;
+    border-radius: 50px;
+    color: #05b94a;
+}
+.actionBtns {
+    display: flex;
+    gap: 8px;
+}
+.actionDelete {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d4d4d8;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.actionDelete:hover {
+    background: red;
+}
+.actionUpdate {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #d4d4d8;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.actionUpdate:hover {
+    background: #0565b9;
+}

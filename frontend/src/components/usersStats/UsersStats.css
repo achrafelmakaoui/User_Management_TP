@@ -4,9 +4,10 @@
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    margin-bottom: 2rem;
 }
 .stateCard {
-    background-color: #bed7eeb3;
+    background-color: #bed7ee4e;
     border: 1px solid #0565b972;
     width: 100%;
     padding: 1.5rem;
