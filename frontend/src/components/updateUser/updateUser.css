@@ -1,0 +1,89 @@
+.updateUserBanner{
+    display: flex;
+    width: 100%;
+}
+.updateUserContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.updateUserContent h2{
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #0e1f1c;
+    letter-spacing: -0.02em;
+    line-height:1.1;
+    margin-top: 1rem;
+}
+.bannerForm{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+}
+.formRow{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+.formInput{
+    display: grid;
+    width: 50%;
+    gap: 0.5rem;
+}
+.formInput label{
+    font-family: "Outfit", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    font-weight: 500;
+    color: #0e1f1c;
+}
+.formInput input{
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #0e1f1c;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(15, 76, 69, 0.12);
+    border-radius: 6px;
+    outline: none;
+}
+.formInput select {
+    outline: none;
+    width: 100%;
+    font-family: "Outfit", sans-serif;
+    font-size: 0.9rem;
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 0.5rem 0.75rem;
+    color: #0e1f1c;
+    border: 1px solid rgba(15, 76, 69, 0.12);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+}
+
+.btnSubmit{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+.btnSubmit button{
+    font-family: "Outfit", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: white;
+    background-color: #0565b9;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    border: 1px solid #0565b96e;
+    cursor: pointer;
+}
