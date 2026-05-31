@@ -23,9 +23,13 @@ const UsersTable = () => {
       fetchUsers();
   }, []);
 
-  const formatDate = (date) => {
-      return new Date(date).toLocaleDateString("en-GB");
-  };
+  const formatDate = (dateStr) => {
+      return new Date(dateStr).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      });
+    };
 
   if (loading) {
       return <p>Loading users...</p>;
