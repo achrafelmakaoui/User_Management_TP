@@ -1,7 +1,7 @@
 import React from 'react'
 import "./UsersTable.css"
 
-const UsersTable = ({ users }) => {
+const UsersTable = ({ users, onDelete }) => {
     const formatDate = (dateStr) => {
         return new Date(dateStr).toLocaleDateString("en-US", {
             year: "numeric",
@@ -33,7 +33,7 @@ const UsersTable = ({ users }) => {
                             <td>{formatDate(user.createdAt)}</td>
                             <td>
                             <div className="actionBtns">
-                                <button className="actionDelete">🗑️</button>
+                                <button className="actionDelete" onClick={() => onDelete(user._id)}>🗑️</button>
                                 <button className="actionUpdate">✏️</button>
                             </div>
                             </td>

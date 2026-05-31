@@ -9,22 +9,32 @@ const UsersPage = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const res = await axios.get("http://localhost:5000/users");
-                setUsers(res.data);
-            } 
-            catch (err) {
-                console.error("Error fetching users:", err);
-            }
-            finally {
-                setLoading(false);
-            }
-        };
-
         fetchUsers();
     }, []);
 
+    const fetchUsers = async () => {
+        try {
+            const res = await axios.get("http://localhost:5000/users");
+            setUsers(res.data);
+        } 
+        catch (err) {
+            console.error("Error fetching users:", err);
+        }
+        finally {
+            setLoading(false);
+        }
+    };
+
+    const deleteUser = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5000/users/${id}`);
+            fetchUsers();
+        } 
+        catch (err) {
+            console.log(err);
+        }
+    };
+    
     if (loading) {
         return <p>Loading users...</p>;
     }
@@ -42,7 +52,7 @@ const UsersPage = () => {
                     </div>
                 </div>
                 <UsersStats users={users}/>
-                <UsersTable users={users}/>
+                <UsersTable users={users} onDelete={deleteUser} />
             </div>
         </div>
     )
