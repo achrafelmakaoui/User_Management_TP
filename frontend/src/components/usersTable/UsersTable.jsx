@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./UsersTable.css"
+import axios from "axios";
 
-const usersTable = () => {
+const UsersTable = () => {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+      const fetchUsers = async () => {
+          try {
+              const res = await axios.get("http://localhost:5000/users");
+              setUsers(res.data);
+          } 
+          catch (err) {
+              console.error("Error fetching users:", err);
+          } 
+          finally {
+              setLoading(false);
+          }
+      };
+
+      fetchUsers();
+  }, []);
+
+  const formatDate = (date) => {
+      return new Date(date).toLocaleDateString("en-GB");
+  };
+
+  if (loading) {
+      return <p>Loading users...</p>;
+  }
+
   return (
     <div className='tableBanner'>
         <table className="usersTable">
@@ -15,38 +44,26 @@ const usersTable = () => {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Achraf El Makoui</td>
-                    <td>elmakaouiachraf@gmail.com</td>
-                    <td className="role admin">
-                        <span>Admin</span>
-                    </td>
-                    <td>12/04/2026</td>
-                    <td>
-                      <div className='actionBtns'>
-                          <button className='actionDelete'>🗑️</button>
-                          <button className='actionUpdate'>✏️</button>
-                      </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Achraf El Makoui</td>
-                    <td>elmakaouiachraf@gmail.com</td>
-                    <td className="role user">
-                        <span>User</span>
-                    </td>
-                    <td>12/04/2026</td>
-                    <td>
-                      <div className='actionBtns'>
-                          <button className='actionDelete'>🗑️</button>
-                          <button className='actionUpdate'>✏️</button>
-                      </div>
-                    </td>
-                </tr>
+                {users.map((user) => (
+                    <tr key={user._id}>
+                        <td>{user.nomComplet}</td>
+                        <td>{user.email}</td>
+                        <td className={`role ${user.isAdmin ? "admin" : "user"}`}>
+                            <span>{user.isAdmin ? "Admin" : "User"}</span>
+                        </td>
+                        <td>{formatDate(user.createdAt)}</td>
+                        <td>
+                          <div className="actionBtns">
+                              <button className="actionDelete">🗑️</button>
+                              <button className="actionUpdate">✏️</button>
+                          </div>
+                        </td>
+                    </tr>
+                ))}
             </tbody>
         </table>
     </div>
   )
 }
 
-export default usersTable
+export default UsersTable
